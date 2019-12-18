@@ -1,0 +1,324 @@
+<app-header></app-header>
+
+<div class="container-fluid bannerblock bannerblockinner">
+  <div class="item">
+    <div class="row row-eq-height">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+        <img src="../../assets/images/banner-img1-contactus.jpg"/>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+        <div class="bannerblockcontent">
+          <h2>April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+            <ul class="list-inline">
+               <!-- <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                <li><a style="cursor: pointer" (click)="callmodalforagenda()"  class="bannerblackbtn"><span>Vendors</span></a></li>
+                <li><a style="cursor: pointer" (click)="callmodalforagenda()"  class="bannerblackbtn"><span>Readers</span></a></li>
+
+            <!--    <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid pageheaderblock">
+  <h2>Contact Us</h2>
+</div>
+
+
+<div class="container-fluid contactusformblock">
+  <div class="contactusformblockwrapper">
+    <div class="row row-flex">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactusformblockleft">
+        <div class="row row-flex">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="contactgirlimg">
+              <img src="../../assets/images/contactgirlimg.png"/>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="spiritconlogowrapper">
+              <img src="../../assets/images/spiritconlogo-contactus.png"/>
+            </div>
+
+            <h2>Spirit Convention</h2>
+            <h4><!--24/7 Customer Service-->1661 N. Main Street</h4>
+           <h3><!-- Email: <a href="mailto:support@brownpapertickets.com">support@brownpapertickets.com</a><br>-->
+              Tel: <a href="tel:+(801) 773-7243">(801) 773-7243</a> <!--Worldwide--></h3>
+            <div class="sociallinks">
+              <h5>Connect with us</h5>
+              <ul class="list-inline">
+               <!-- <li><a href="javascript:void(0)"><img src="../../assets/images/icon-twitter.png"/></a></li>-->
+                <li><a href="https://www.facebook.com/spiritconutah/" target="_blank"><img src="../../assets/images/icon-facebook.png"/></a></li>
+               <!-- <li><a href="javascript:void(0)"><img src="../../assets/images/icon-bloger.png"/></a></li>
+                <li><a href="javascript:void(0)"><img src="../../assets/images/icon-youtube.png"/></a></li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactusformblockright">
+        <form role="form" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value)">
+          <h2>Contact Form</h2>
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Name" [formControl]="dataForm.controls['name']">
+            <span class="has-error" *ngIf ="dataForm.controls['name'].touched && !dataForm.controls['name'].valid">Name is Required !</span>
+            <!--<small id="emailHelp" class="form-text">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" [formControl]="dataForm.controls['email']">
+            <span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('blank')==true">Email is Required !</span>
+            <span class="has-error" *ngIf ="dataForm.controls['email'].touched && getemail('invalid')==true">Email is not valid!</span>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="number" placeholder="Phone" [formControl]="dataForm.controls['phone']">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="subject" placeholder="Subject" [formControl]="dataForm.controls['subject']">
+            <span class="has-error" *ngIf ="dataForm.controls['subject'].touched && !dataForm.controls['subject'].valid">Subject is Required !</span>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="textarea" rows="5" placeholder="Message" [formControl]="dataForm.controls['message']"></textarea>
+            <span class="has-error" *ngIf ="dataForm.controls['message'].touched && !dataForm.controls['message'].valid">Message is Required !</span>
+          </div>
+          <button type="submit" >Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid bottombannerblock2">
+    <div class="bottombannerblock2-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <div class="bottombannerblock2content">
+                    <h2>Come check out all our Incredible Vendor booths, spiritual readers, healers and more that will be coming to SpiritCon!</h2>
+                    <h3>THE VENDOR BOOTHS AND HEALER TABLES WILL BE <span>FREE</span> OPEN TO THE PUBLIC FOR THE DURATION OF THE EVENT!</h3>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <!--  <a class="banneryellowbtnsml" [routerLink]="['/boothtable']">Click here Now!</a>-->
+                <a class="banneryellowbtnsml" style="cursor: pointer" (click)="callmodalforagendamoalcom1()">Click here Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="container-fluid bottombannerblock">
+    <div class="bottombannerblock-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="bottombannerblocklogo">
+                    <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerblocklogo.png"/></a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="bottombannerblockcontent">
+                    <h2>SpiritCon Sponsor</h2>
+                    <h3>ONE OF THE LARGEST SELECTION OF METAPHYSICAL PRODUCTS and books in Utah. We are here to assist you on your journey of understanding <span>Metaphysics, Meditation, Pagan, and Holistic living wherever you live.</span> </h3>
+                    <div class="bottombannerblocklogohiddenstage">
+                        <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerlogo-hiddenstage.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!---new section added 2018-02-20---->
+<div class="container-fluid bottombannerblock3">
+    <img src="../../assets/images/bottombannerblock3bgsml.jpg" class="bottombannerblock3bgsml">
+    <div class="bottombannerblock3-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="bottombannerblock3content">
+                    <h3>If you are traveling to the convention we have you covered! Coming to SpiritCon from out of town is really simple!</h3>
+                    <div class="h2wrapper">
+                            <h2><span><a [routerLink]="['/travellodging']">PLEASE VISIT OUR TRAVEL AND LODGING PAGE TO LEARN MORE ABOUT COMING TO SPIRITCON FROM OUT OF STATE!</a></span></h2>
+                      <!--  <h2><span><a style="cursor: pointer" (click)="callmodalforagendamoalcom2()">PLEASE VISIT OUR TRAVEL AND LODGING PAGE TO LEARN MORE ABOUT COMING TO SPIRITCON FROM OUT OF STATE!</a></span></h2>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---new section added 2018-02-20---->
+
+<app-footer></app-footer>
+
+<div *ngIf="isModalShown3" class="modal fade mybuynowModal" id="mybuynowModal" role="dialog" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <h2>We would love for you to Exhibit or have a Table with us here at <span>SpiritCon!</span></h2>
+        <h3><span class="blue">Vendors</span> will be in a room separate from Readers and Healers to give better atmosphere to both.</h3>
+        <ul>
+          <li>Vendor booths are 10'x10' and $120. </li>
+          <li>They have the option to do split booths that are 5'x10' for only $60.</li>
+          <li>Reader booths are 6'x6' for $60 and Healer booths are 10'x10' for $80. </li>
+          <li>All booths come with tables, tablecloths, and chairs. </li>
+          <li>We also have info booths that are just a 4' table with tablecloth. These are free to any groups wishing to have one. </li>
+        </ul>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+          <!-- Saved buttons use the "secure click" command -->
+          <input type="hidden" name="cmd" value="_s-xclick">
+
+          <!-- Saved buttons are identified by their button IDs -->
+          <input type="hidden" name="hosted_button_id" value="221">
+
+          <!-- Saved buttons display an appropriate button image. -->
+          <input type="image" name="submit"
+                 src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                 alt="PayPal - The safer, easier way to pay online">
+          <img alt="" width="1" height="1"
+               src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="isModalShown" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+          <br/>
+        <h2>Thanks for your interest. We'll get back to you soon.
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShown4" class="modal fade mybuynowModal buybooth" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <!--  <h2>We have 10 of the <span>6'x6'</span> Reader spaces left, 6 of the <span>10'x10'</span> Vendor spaces, and 2 of the <span>5'x10'</span> Vendor spaces.</h2>-->
+                <h6>GET A BOOTH OR TABLE!</h6>
+                <p>To buy a booth space or reader table please contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:Vendors@spiritconvention.com" target="_top">Vendors@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+                <!-- <iframe style="border: none" src="http://influxiq.com/projects/paypalt.php"></iframe>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalShown5" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+
+                <h6>SpiritCon Agenda 2019</h6>
+
+                <p>We will be launching our new Agenda for the 2019 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalShown10" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+
+                <h6>SpiritCon Agenda 2020</h6>
+
+
+
+                <p>We will be launching our new Agenda for the 2020 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="isModalShowncom1" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <br/>
+                <h2>COMING Soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isModalShowncom2" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <br/>
+                <h2>COMING Soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>

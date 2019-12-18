@@ -1,0 +1,555 @@
+<app-header></app-header>
+
+
+<div class="container-fluid bannerblock">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol> -->
+
+        <!-- Wrapper for slides -->
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+                            <img src="../../assets/images/banner-img1.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+                            <div class="bannerblockcontent">
+                                <h2><!--March 31st and April 1st-->April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+                                <h3>Held at the beautiful Davis Convention Center in Layton, UT </h3>
+                                <h4>1651 N 700 W, Layton, UT 84041</h4>
+                                <ul class="list-inline">
+                                   <!-- <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                                    <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                                    <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                                    <!--Pending Development--->
+                                    <!--<li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                                   <!-- <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+                            <img src="../../assets/images/banner-img2.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+                            <div class="bannerblockcontent">
+                                <h2><!--March 31st and April 1st-->April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+                                <h3>Come and be part of our community and show your support for the</h3>
+                                <h4>alternative spiritual paths we all walk!</h4>
+                                <ul class="list-inline">
+                                   <!-- <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                                    <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                                    <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                                    <!--Pending Development--->
+                                   <!-- <li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                                   <!-- <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+                            <img src="../../assets/images/banner-img3.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+                            <div class="bannerblockcontent">
+                                <h2><!--March 31st and April 1st-->April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+                                <h3>Energy Classes include Empathic Defense, Chi Gung, Chakras, Photonic</h3>
+                                <h4>Method and Dance Chant Magic.</h4>
+                                <ul class="list-inline">
+                                  <!--  <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                                    <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                                    <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                                    <!--Pending Development--->
+                                   <!-- <li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                                     <!--<li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+                            <img src="../../assets/images/banner-img4.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+                            <div class="bannerblockcontent">
+                                <h2><!--March 31st and April 1st-->April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+                                <h3>Divination classes include Tarot reading, Tea Leaf reading, Casting bones,</h3>
+                                <h4>Astrology, Runes, Pendulum, and Sigils.</h4>
+                                <ul class="list-inline">
+                                    <!--<li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                                    <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                                    <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                                    <!--Pending Development--->
+                                   <!-- <li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                                   <!-- <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="row row-eq-height">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+                            <img src="../../assets/images/banner-img5.jpg"/>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+                            <div class="bannerblockcontent">
+                                <h2><!--March 31st and April 1st-->April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+                                <h3>Craft classes include Everyday Crafting, Flat Magic (Paper Crafts),</h3>
+                                <h4>Altars, and Crystal Grids.</h4>
+                                <ul class="list-inline">
+                                   <!-- <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                                    <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                                    <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                                    <!--Pending Development--->
+                                  <!--  <li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" target="_self" class="bannerblackbtn"><span>Vendors</span></a></li>
+                                    <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                                  <!--  <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                                    <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Left and right controls
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>-->
+    </div>
+</div>
+
+
+<!--<div class="homenew_text"><span>$20</span> for the entire weekend, including the free concert Saturday night, or <span>$10</span> for a single day.
+
+<br/>
+
+    <p style="margin: 0; padding: 10px 0 0 0; font-size: 20px; text-transform: capitalize;"><span style="text-transform: uppercase; font-size: 35px;"> Leslie Hudson	Free concert on Saturday night</span><br/><a href="https://lesliehudson.com/" target="_blank" style="color: #1f2022;"> Leslie Hudson is what happens when Tori Amos and Loreena McKennitt swap set lists, and folktales become character studies of the female psyche.  A tapestry of musical styles, cultural influences and spiritual experiences, she goes right to the heart of a story and weaves a song around it.</a></p>
+</div>-->
+
+<div class="container-fluid indexblock1">
+    <div class="row">
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock1contentwrapper">
+                <div class="indexblock1img1leftwrapper">
+                    <img src="../../assets/images/spiritcon_2019_new1.png">
+                </div>
+                <div class="contentcentered">
+                    <h2>Come to SpiritCon for one of the most incredible learning experiences of your lifetime!</h2>
+                    <p>Dozens of speakers, trainers and spiritual healers are all coming together in one place for 2 incredible days of sharing. We are a Spiritual Convention centered on enriching our connection with nature, deities, ourselves, and, of course, each other. Join us as we bring all paths together to connect, grow, learn, and understand.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid indexblock2">
+    <div class="row">
+        <img src="../../assets/images/indexblock2-img2mobile.jpg" class="indexblock2-img2mobile" />
+        <div class="container contentwrapper">
+            <img src="../../assets/images/indexblock2-img1.jpg" class="indexblock2-img1">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock2contentwrapper">
+                <div class="indexblock2img1leftwrapper">
+                    <div class="indexblock2img1leftwrapperheader">
+                        <h2>Get your tickets for both incredible days at SpiritCon right away</h2>
+                        <!--<a href="https://www.brownpapertickets.com/event/3161483" target="_blank"  class="bannerblackbtnsml" ><span>click here</span></a>-->
+                        <a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank"  class="bannerblackbtnsml" ><span>click here</span></a>
+                    </div>
+                    <img src="../../assets/images/indexblock2-img1.jpg">
+                </div>
+                <div class="contentcentered">
+                    <h2>Get your Booth Space or table at SpiritCon and bring your readings or business to the <span>convention!</span></h2>
+                    <a (click)="callmodalforbuybooth()"  class="bannerblackbtnsml"><span>click here</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid indexblock3">
+    <div class="row">
+        <img src="../../assets/images/indexblock3bgmobile.jpg" class="indexblock3bgmobile" />
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock3contentwrapper">
+                <div class="contentcentered">
+                    <h2>coming April 4th and 5th 2020 starting at 9AM each day to the Davis Conference Center in Layton is SpiritCon.</h2>
+                    <p>This is a non-denominational convention for everyone who wants to learn more about energy in a number of different ways; new, experienced, or just curious. Join us for two days brimming with classes and panels on energy, personal spiritual growth, divination, traditions and much more. </p>
+                    <ul class="list-inline">
+                       <!-- <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                        <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                        <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                        <!--Pending Development--->
+                      <!--  <li><a [routerLink]="['/boothtable']" target="_self" class="bannerblackbtn"><span>Vendors & Readers</span></a></li>-->
+                        <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                        <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                        <!--<li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                        <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                        <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid indexblock4">
+    <div class="row">
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock4contentwrapper">
+                <div class="indexblock4img1leftwrapper">
+                    <img src="../../assets/images/spiritcon_2019_new2.png">
+                </div>
+                <div class="contentcentered">
+                    <h2>Besides all of the amazing presentations we will also have panels that will include:</h2>
+                    <p> What is a Witch/Witchcrafting, Comparative Systems in Paganism, How to Support your Witch, Community for Solitaries, Safety (Warding, Physical, Etc.), Spell Writing, Meditation, and Ritual Construction.</p>
+                    <ul class="list-inline">
+                        <!--<li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+                        <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+                        <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+                        <!--Pending Development--->
+                        <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Vendors</span></a></li>
+                        <li><a style="cursor: pointer" (click)="callmodalforagenda()" class="bannerblackbtn"><span>Readers</span></a></li>
+
+                       <!-- <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                        <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+                        <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid indexblock5">
+    <div class="row">
+        <img src="../../assets/images/indexblock5bgmobile.jpg" class="indexblock5bgmobile" />
+
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock5contentwrapper">
+                <div class="contentcentered">
+                    <h2>Classes that will be offered at our <span>two-day event</span></h2>
+                    <ul class="list-inline indexblock5lists">
+                        <li><span>Craft classes include Everyday Crafting, Flat Magic (Paper Crafts), Altars, and Crystal Grids.</span></li><li><span>Energy Classes include Empathic Defense, Chi Gung, Chakras, and Dance Chant Magic.</span></li><li><span>Nature classes include Animals (Totems and More), Plants, Rocks/Crystals, and Mythical Creatures.</span></li><li><span>Cycles classes include Wheel of the Year, Lunar, Mysteries, and Places of Power.</span></li><li><span>Traditions classes include Greek/Roman, Celtic, Egyptian, Norse, Root Magic, Intro to Qabala, and Beginning Devotional Practices.</span></li><li><span>Divination classes include Tarot reading, Tea Leaf reading, Casting bones, Astrology, Runes, Pendulum, and Sigils.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="container-fluid indexblock6">
+    <div class="row">
+        <img src="../../assets/images/indexblock6bgmobile.jpg" class="indexblock6bgmobile" />
+
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock6contentwrapper">
+                <div class="contentcentered">
+                    <h2>We also have some wonderful events for the children!</h2>
+                    <p>Kids Classes will be broken into three age groups 3 to 7 (Sprites), 8 to 13 (Leprechaun), 14 to 17 (Goblins). Each age group will go over a variant of the following classes: Herbs, Moon Phases, Crystals, Tools, Grounding, and Animal Spirits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="container-fluid indexblock7">
+    <div class="row">
+        <img src="../../assets/images/indexblock7bgmobile.jpg" class="indexblock7bgmobile" />
+        <div class="container contentwrapper">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock7contentwrapper">
+                <div class="contentcentered">
+                    <h2>We will have a vendor room full of crystals, wood burned items, hand tooled leather works, jewelry, hand made crafts, soaps, candles, and more to aid in your spiritual journey.</h2>
+                    <p>There will also be a reader and healer room for Tarot, Medium, and Psychic readings, as well as Reiki and Pranic Healing, and a wonderful massage therapist.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid bottombannerblock2">
+    <div class="bottombannerblock2-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <div class="bottombannerblock2content">
+                    <h2>Come check out all our Incredible Vendor booths, spiritual readers, healers and more that will be coming to SpiritCon!</h2>
+                    <h3>THE VENDOR BOOTHS AND HEALER TABLES WILL BE <span>FREE</span> OPEN TO THE PUBLIC FOR THE DURATION OF THE EVENT!</h3>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <!--<a [routerLink]="['/boothtable']" class="banneryellowbtnsml">Click here Now!</a>-->
+                <a style="cursor: pointer" (click)="callmodalforagendamoalcom1()" class="banneryellowbtnsml">Click here Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="container-fluid bottombannerblock">
+    <div class="bottombannerblock-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="bottombannerblocklogo">
+                    <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerblocklogo.png"/></a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="bottombannerblockcontent">
+                    <h2>SpiritCon Sponsor</h2>
+                    <h3>ONE OF THE LARGEST SELECTION OF METAPHYSICAL PRODUCTS and books in Utah. We are here to assist you on your journey of understanding <span>Metaphysics, Meditation, Pagan, and Holistic living wherever you live.</span> </h3>
+                    <div class="bottombannerblocklogohiddenstage">
+                        <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerlogo-hiddenstage.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!---new section added 2018-02-20---->
+<div class="container-fluid bottombannerblock3">
+    <img src="../../assets/images/bottombannerblock3bgsml.jpg" class="bottombannerblock3bgsml">
+    <div class="bottombannerblock3-wrapper">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="bottombannerblock3content">
+                    <h3>If you are traveling to the convention we have you covered! Coming to SpiritCon from out of town is really simple!</h3>
+                    <div class="h2wrapper">
+                      <h2><span><a [routerLink]="['/travellodging']">PLEASE VISIT OUR TRAVEL AND LODGING PAGE TO LEARN MORE ABOUT COMING TO SPIRITCON FROM OUT OF STATE!</a></span></h2>
+                     <!--   <h2><span><a style="cursor: pointer" (click)="callmodalforagendamoalcom2()" >PLEASE VISIT OUR TRAVEL AND LODGING PAGE TO LEARN MORE ABOUT COMING TO SPIRITCON FROM OUT OF STATE!</a></span></h2>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---new section added 2018-02-20---->
+
+<app-footer></app-footer>
+
+
+<div *ngIf="isModalShown3" class="modal fade mybuynowModal" id="mybuynowModal" role="dialog" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <h2>We would love for you to Exhibit or have a Table with us here at <span>SpiritCon!</span></h2>
+                <h3><span class="blue">Vendors</span> will be in a room separate from Readers and Healers to give better atmosphere to both.</h3>
+                <ul>
+                    <li>Vendor booths are <span>10'x10'</span> and $120. </li>
+                    <li>They have the option to do split booths that are <span>5'x10'</span> for only $60.</li>
+                    <li>Reader booths are <span>6'x6'</span> for $60 and Healer booths are <span>10'x10'</span> for $80. </li>
+                    <li>All booths come with tables, tablecloths, and chairs. </li>
+                    <li>We also have info booths that are just a 4' table with tablecloth. These are free to any groups wishing to have one. </li>
+                </ul>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+                    <!-- Saved buttons use the "secure click" command -->
+                    <input type="hidden" name="cmd" value="_s-xclick">
+
+                    <!-- Saved buttons are identified by their button IDs -->
+                    <input type="hidden" name="hosted_button_id" value="221">
+
+                    <!-- Saved buttons display an appropriate button image. -->
+                    <input type="image" name="submit"
+                           src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                           alt="PayPal - The safer, easier way to pay online">
+                    <img alt="" width="1" height="1"
+                         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div *ngIf="isModalShown" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <br/>
+                <h2>COMING Soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isModalShown4" class="modal fade mybuynowModal buybooth" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <!--  <h2>We have 10 of the <span>6'x6'</span> Reader spaces left, 6 of the <span>10'x10'</span> Vendor spaces, and 2 of the <span>5'x10'</span> Vendor spaces.</h2>-->
+                <h6>GET A BOOTH OR TABLE!</h6>
+                <p>To buy a booth space or reader table please contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:Vendors@spiritconvention.com" target="_top">Vendors@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+                <!-- <iframe style="border: none" src="http://influxiq.com/projects/paypalt.php"></iframe>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isModalShown5" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+
+                <h6>SpiritCon Agenda 2019</h6>
+
+                <p>We will be launching our new Agenda for the 2019 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalShown10" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+
+                <h6>SpiritCon Agenda 2020</h6>
+
+
+
+                <p>We will be launching our new Agenda for the 2020 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div *ngIf="isModalShowncom1" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <br/>
+                <h2>COMING Soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalShowncom2" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+                <br/>
+                <h2>COMING Soon!</h2>
+            </div>
+        </div>
+    </div>
+</div>

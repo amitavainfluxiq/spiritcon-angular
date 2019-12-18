@@ -1,0 +1,56 @@
+<app-adminheader></app-adminheader>
+<app-adminleftsidebar></app-adminleftsidebar>
+<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 dashboard_right">
+  <div class="dashboard_right_wrapper">
+    <div class="dashboard1_div1 ">
+      <h4> Add Vendor</h4>
+      <div class="dashboard1form">
+
+        <form role="form" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value)">
+
+          <label>Booth Number</label>
+          <input type="text" class="form-control" placeholder="Booth Number" [formControl]="dataForm.controls['booth_no']">
+          <span class="has-error" *ngIf ="dataForm.controls['booth_no'].touched && !dataForm.controls['booth_no'].valid">Booth Number is Required !</span>
+
+          <label>Name of business</label>
+          <input type="text" class="form-control" placeholder="Business Name" [formControl]="dataForm.controls['business_name']">
+          <span class="has-error" *ngIf ="dataForm.controls['business_name'].touched && !dataForm.controls['business_name'].valid">Business Name is Required !</span>
+
+
+          <label>Name of Person</label>
+          <input type="text" class="form-control" placeholder="Person Name" [formControl]="dataForm.controls['person_name']">
+          <span class="has-error" *ngIf ="dataForm.controls['person_name'].touched && !dataForm.controls['person_name'].valid">Person Name is Required !</span>
+
+          <label>Description</label>
+          <ckeditor
+                  [(ngModel)]="ckeditorContent" [ngModelOptions]="{standalone: true}"
+                  [config]="{uiColor: '#fff6ed',autoParagraph:true ,extraAllowedContent:'map(*){*}[*];area(*){*}[*];head(*){*}[*];style(*){*}[*];img(*){*}[*]'}"
+                  debounce="500">
+          </ckeditor>
+          <span class="has-error" *ngIf ="errckeditor">Give Description</span>
+
+          <label>Email</label>
+          <input type="text" class="form-control" placeholder="Email" [formControl]="dataForm.controls['email']">
+
+          <label>Phone No</label>
+          <input type="text" class="form-control" placeholder="Phone No" [formControl]="dataForm.controls['phone']">
+
+          <label>Website</label>
+          <input type="text" class="form-control" placeholder="Website" [formControl]="dataForm.controls['website']">
+
+          <label>Add Years</label>
+          <input type="checkbox" [formControl]="dataForm.controls['year_2018']">2018
+          <input type="checkbox" [formControl]="dataForm.controls['year_2019']">2019
+          <input type="checkbox" [formControl]="dataForm.controls['year_2020']">2020
+
+          <br><input type="submit" value="Save" class="loginbtn2 cancel">
+          <button type="button" [routerLink]="['/vendorlist']" class="loginbtn2 cancel">Cancel</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<app-footer></app-footer>-->

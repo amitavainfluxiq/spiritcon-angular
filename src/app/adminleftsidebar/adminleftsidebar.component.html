@@ -1,0 +1,64 @@
+<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 dashboard_left">
+  <h2><p class="gotonextline">Welcome</p>
+    <div class="wrappermarginadd">  <p class="firstlettercapitalization marginadd">{{cookiedetails.first_name }}</p>
+      <p class="firstlettercapitalization">{{cookiedetails.last_name}}</p>
+    </div></h2>
+
+
+  <!--    usertype == 1     (ADMIN)             -->
+  <!--    usertype == 0     (REPRESENTATIVE)    -->
+
+
+
+  <ul>
+
+    <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+   <!-- <li  *ngIf="usertype==0"><a [routerLink]="['/repdetailinfo',cookiedetails.id,0]">My Profile</a></li>
+    <li *ngIf="usertype==1"><a [routerLink]="['/dashboardmessageadd']">Manage Welcome Message </a></li>-->
+    <li *ngIf="usertype==1"><a>Admin Management</a>
+      <ul>
+        <li><a [routerLink]="['/addadmin']">Add admin</a></li>
+        <li><a [routerLink]="['/adminlist']">Admin List</a></li>
+      </ul>
+    </li>
+
+
+
+    <li *ngIf="usertype==1"><a>Speaker Management</a>
+      <ul>
+        <li><a [routerLink]="['/speakeradd']">Add Speaker</a></li>
+        <li><a [routerLink]="['/speakerlist']">Speaker List</a></li>
+      </ul>
+    </li>
+
+
+
+    <li *ngIf="usertype==1"><a>Vendor Management</a>
+      <ul>
+        <li><a [routerLink]="['/vendoradd']">Add Vendor</a></li>
+        <li><a [routerLink]="['/vendorlist']">Vendor List</a></li>
+      </ul>
+    </li>
+
+
+    <li><a>Healer Management</a>
+      <ul>
+        <li><a [routerLink]="['/healeradd']">Add Healer</a></li>
+        <li><a [routerLink]="['/healerlist']">Healer List</a></li>
+      </ul>
+    </li>
+
+<!--
+    <li *ngIf="usertype==1"><a>Manage Representative</a>
+      <ul>
+        <li><a [routerLink]="['/representativelist']">Representative List</a></li>
+      </ul>
+    </li>
+
+    <li><a [routerLink]="['/changepassword']">Change Password</a></li>
+    <li *ngIf="usertype==1"><a [routerLink]="['/']">Home</a></li>-->
+    
+    <li><a class="logoutclass" (click)="logout()">Log out</a></li>
+
+  </ul>
+</div>

@@ -1,0 +1,102 @@
+<app-adminheader></app-adminheader>
+<app-adminleftsidebar></app-adminleftsidebar>
+<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 dashboard_right">
+  <div class="dashboard_right_wrapper">
+    <div class="dashboard1_div1 ">
+      <h4> Add Speaker</h4>
+      <div class="dashboard1form">
+
+        <form role="form" novalidate [formGroup]="dataForm" (ngSubmit)="dosubmit(dataForm.value)">
+
+          <label>Speaker Name</label>
+
+
+
+
+          <input type="text" class="form-control" placeholder="Speaker Name" [formControl]="dataForm.controls['speaker_name']">
+          <span class="has-error" *ngIf ="dataForm.controls['speaker_name'].touched && !dataForm.controls['speaker_name'].valid">Speaker Name is Required !</span>
+
+          <div class="img-responsive clearfix makeitcenter">
+            <label>Upload Image</label>
+            <!--<label class="upload-button filechoosebtnbg">-->
+              <!--<input class="img-responsive clearfix" type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" accept="image/*" *ngIf="disableuploader==0">-->
+            <!--</label>-->
+            <lib-file-upload [config]="configData"></lib-file-upload><br>
+            <mat-error *ngIf="ErrCode==true">Please add just one service image.</mat-error>
+            <mat-error *ngIf="imageErrCode==true">Please add an image.</mat-error>
+
+            <!--<lib-file-upload [config]="configData"></lib-file-upload>-->
+            <!--<small><b>Please upload atleast 200 * 200 px image.</b></small>-->
+            <div>
+
+            </div>
+          </div>
+
+
+
+
+
+          <div class="browsefileblockimg">
+            <div class="row">
+              <div class="browsefileblockimgmultiplerow">
+                <div class="browsefileblockimgmultiplerowsingle" *ngIf="files.length>0">
+                  <div class="browsefileblockimgmultiplerowimgagebig">
+                    <div *ngIf="_commonservices.openlocal==true">
+                    <img  class="img-responsive center-block firstimgheightset" style="width: 100%; height: auto" src="../../assets/images/uploads/{{files[0].response}}" >  <!--LOCAL-->
+                    </div>
+                    <div *ngIf="_commonservices.openserver==true">
+                    <img  class="img-responsive center-block firstimgheightset" style="width: 100%; height: auto" src="../../assets/images/uploads/{{files[0].response}}" > <!--SERVER-->
+                    </div>
+
+                  </div>
+                  <input type="button"  *ngIf="files.length>0" value="Delete" class="form-control btn btn-primary btnform  center-block" (click)="deleteimage1(0)" style="margin: 0 auto; width: 30%; float: none">
+                </div>
+
+                <div class="clearfix"></div>
+
+              </div>
+
+            </div>
+            </div>
+          <label>Description</label>
+          <ckeditor
+                  [(ngModel)]="ckeditorContent" [ngModelOptions]="{standalone: true}"
+                  [config]="{uiColor: '#fff6ed',autoParagraph:true ,extraAllowedContent:'map(*){*}[*];area(*){*}[*];head(*){*}[*];style(*){*}[*];img(*){*}[*]'}"
+                  debounce="500">
+          </ckeditor>
+          <div class="addmarginbottom"></div>
+          <span class="has-error" *ngIf ="errckeditor">Give Description</span>
+
+        <!--  <label>Email</label>
+          <input type="text" class="form-control" placeholder="Email" [formControl]="dataForm.controls['email']">
+-->
+
+          <label>Subjects Covered</label>
+          <textarea placeholder="Subjects Covered" [formControl]="dataForm.controls['subjects_covered']"  class="addmargin-padding"></textarea>
+          <small><b class="addonlypadding">Please use this format to add subjects-&nbsp;&nbsp;subject1,subject2,subject3,...</b></small>
+
+
+          <label>Start Date & Time</label>
+          <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Start Date Time" [formControl]="dataForm.controls['start_date_time']" class="addmargin">
+          <owl-date-time #dt1></owl-date-time>
+
+          <label>Add Years</label>
+          <input type="checkbox" [formControl]="dataForm.controls['year_2018']">2018
+          <input type="checkbox" [formControl]="dataForm.controls['year_2019']">2019
+          <input type="checkbox" [formControl]="dataForm.controls['year_2020']">2020
+
+          <div class="hide"><label>End Date & Time</label>
+          <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="End Date Time" [formControl]="dataForm.controls['end_date_time']" class="addmargin addextramargin">
+          <owl-date-time #dt2></owl-date-time></div>
+
+          <br><input type="submit" value="Save" class="loginbtn2 cancel">
+          <button type="button" [routerLink]="['/speakerlist']" class="loginbtn2 cancel">Cancel</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<app-footer></app-footer>-->

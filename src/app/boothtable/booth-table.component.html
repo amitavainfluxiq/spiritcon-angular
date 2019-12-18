@@ -1,0 +1,508 @@
+<app-header></app-header>
+
+<div class="container-fluid bannerblock bannerblockinner">
+  <div class="item">
+    <div class="row row-eq-height">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockright pull-right">
+        <img src="../../assets/images/banner-img1-boothtable.jpg"/>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 bannerblockleft">
+        <div class="bannerblockcontent">
+          <h2>April 4th and 5th 2020 join us for 2 incredible days of Pagan spirit, magic, healing and community!</h2>
+          <ul class="list-inline">
+         <!--   <li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>-->
+            <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="getstarted"><span>Buy Tickets</span></a></li>
+            <li><a (click)="callmodalforbuybooth()" target="_self" class="bannerblackbtn"><span>Buy Booths or tables</span></a></li>
+            <li><a style="cursor: pointer" (click)="callmodalforagenda()"  class="bannerblackbtn"><span>Vendors</span></a></li>
+            <li><a style="cursor: pointer" (click)="callmodalforagenda()"  class="bannerblackbtn"><span>Readers</span></a></li>
+
+           <!-- <li><a [routerLink]="['/agenda']" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+              <!--<li><a  style="cursor: pointer" (click)="callmodalforagendamoal()" class="bannerblackbtn"><span>See Agenda</span></a></li>-->
+            <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()" class="bannerblackbtn"><span>See Agenda</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid booth-table-block1">
+  <div class="booth-table-block1-wrapper">
+     <!-- <h2 style="font-size: 40px; line-height: 40px; padding: 25px 0; margin: 0px;"><span>coming soon</span></h2>-->
+    <h2>We have some amazing Vendors, Healers and Readers coming to <span>SpiritCon</span>,</h2>
+    <h3>Please take the time to review their information below and be sure the visit them while you are attending!</h3>
+    <div class="booth-table-block1-wrapper-inner">
+      <div class="booth-table-title">
+        <h2>Vendor’s that have booths</h2>
+      </div>
+      <div class="row row-flex">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable" *ngFor="let item of boothlist; let i = index">
+          <div class="singleboothtablewrapper" >
+            <div class="singleboothtablewrappertop">
+              <h2>{{item.business_name}}</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-booth.png"/>
+              </div>
+              <h3>Booth number <span>{{item.booth_no}}</span></h3>
+              <div class="oval"><label><span>Name:</span> {{item.person_name}}</label></div>
+              <p [innerHTML]="_sanitizer.bypassSecurityTrustHtml(item.description)"></p>
+              <a class="readmore" (click)="showcontents(item)">read more</a>
+             <!-- <p>{{callfordescription(item.description)}}</p>-->
+              <h4>Email and phone <span><a href="tel:+{{item.phone}}">{{item.phone}}</a></span><span><a href="mailto:{{item.email}}">{{item.email}}</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="{{checkhttp(item.website)}}" target="_blank">{{item.website}}</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!-- <div class="booth-table-title">
+        <h2>Reader / Healers that have tables</h2>
+      </div>
+      <div class="row row-flex">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable" *ngFor="let item of healerlist; let i = index">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>{{item.business_name}}</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>{{item.table_no}}</span></h3>
+              <div class="oval hide"><label><span>Name:</span> Name of Persons</label></div>
+              <p [innerHTML]="_sanitizer.bypassSecurityTrustHtml(item.description)">...</p>
+              <a class="readmore" (click)="showcontentsforreaders(item)">read more</a >
+              <h4>Email and phone <span><a href="tel:+{{item.phone}}">{{item.phone}}</a></span><span><a href="mailto:{{item.email}}">{{item.email}}</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="{{checkhttp(item.website)}}" target="_blank">{{item.website}}</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+       &lt;!&ndash; <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 singleboothtable">
+          <div class="singleboothtablewrapper">
+            <div class="singleboothtablewrappertop">
+              <h2>Name of business</h2>
+            </div>
+            <div class="singleboothtablecontent">
+              <div class="half-circle-inner">
+                <img src="../../assets/images/icon-table.png"/>
+              </div>
+              <h3>Table number <span>3056</span></h3>
+              <div class="oval"><label><span>Name:</span> Name of Persons</label></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <h4>Email and phone <span><a href="tel:+0000000000">0000 000 000</a></span><span><a href="mailto:loremipsum@gmail.com">loremipsum@gmail.com</a></span></h4>
+              <div class="boothtabledttime">
+                <ul class="list-inline">
+                  <li>Link to website :  <span><a href="www.brownpapertickets.com" target="_blank">www.brownpapertickets.com</a></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>&ndash;&gt;
+      </div>-->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid indexblock2">
+  <div class="row">
+    <img src="../../assets/images/indexblock2-img2mobile.jpg" class="indexblock2-img2mobile" />
+    <div class="container contentwrapper">
+      <img src="../../assets/images/indexblock2-img1.jpg" class="indexblock2-img1">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 indexblock2contentwrapper">
+        <div class="indexblock2img1leftwrapper">
+          <div class="indexblock2img1leftwrapperheader">
+            <h2>Get your tickets for both incredible days at SpiritCon right away</h2>
+            <!--<a href="https://www.brownpapertickets.com/event/3161483" target="_blank" class="bannerblackbtnsml"><span>click here</span></a>-->
+            <a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank" class="bannerblackbtnsml"><span>click here</span></a>
+          </div>
+          <img src="../../assets/images/indexblock2-img1.jpg">
+        </div>
+        <div class="contentcentered">
+          <h2>Get your Booth Space or table at SpiritCon and bring your readings or business to the <span>convention!</span></h2>
+          <a (click)="callmodalforbuybooth()"  class="bannerblackbtnsml"><span>click here</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid convention-center-gotoblock">
+  <div class="contentwrapper">
+    <div class="row row-eq-height">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <h2>Go to the agenda page now and see what we have in store for these incredible 2 days!</h2>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+       <!-- <a class="banneryellowbtnsml" [routerLink]="['/agenda']">click here!</a>-->
+        <a class="banneryellowbtnsml" style="cursor: pointer" (click)="callmodalforagendamoalnew()">click here!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="container-fluid bottombannerblock">
+  <div class="bottombannerblock-wrapper">
+    <div class="row row-flex">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="bottombannerblocklogo">
+          <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerblocklogo.png"/></a>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="bottombannerblockcontent">
+          <h2>SpiritCon Sponsor</h2>
+          <h3>ONE OF THE LARGEST SELECTION OF METAPHYSICAL PRODUCTS and books in Utah. We are here to assist you on your journey of understanding <span>Metaphysics, Meditation, Pagan, and Holistic living wherever you live.</span> </h3>
+          <div class="bottombannerblocklogohiddenstage">
+            <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerlogo-hiddenstage.png"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<div class="container-fluid bottombannerblock2">
+    <div class="bottombannerblock2-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <div class="bottombannerblock2content">
+                    <h2>Come check out all our Incredible Vendor booths, spiritual readers, healers and more that will be coming to SpiritCon!</h2>
+                    <h3>THE VENDOR BOOTHS AND HEALER TABLES WILL BE <span>FREE</span> OPEN TO THE PUBLIC FOR THE DURATION OF THE EVENT!</h3>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                <a class="banneryellowbtnsml" [routerLink]="['/boothtable']">Click here Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="container-fluid bottombannerblock">
+    <div class="bottombannerblock-wrapper">
+        <div class="row row-flex">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="bottombannerblocklogo">
+                  <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerblocklogo.png"/></a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <div class="bottombannerblockcontent">
+                    <h2>SpiritCon Sponsor</h2>
+                    <h3>ONE OF THE LARGEST SELECTION OF METAPHYSICAL PRODUCTS and books in Utah. We are here to assist you on your journey of understanding <span>Metaphysics, Meditation, Pagan, and Holistic living wherever you live.</span> </h3>
+                    <div class="bottombannerblocklogohiddenstage">
+                      <a href="http://www.thehiddensage.com/" target="_blank"><img src="../../assets/images/bottombannerlogo-hiddenstage.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!---new section added 2018-02-20---->
+<div class="container-fluid bottombannerblock3">
+  <img src="../../assets/images/bottombannerblock3bgsml.jpg" class="bottombannerblock3bgsml">
+  <div class="bottombannerblock3-wrapper">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="bottombannerblock3content">
+          <h3>If you are traveling to the convention we have you covered! Coming to SpiritCon from out of town is really simple!</h3>
+          <div class="h2wrapper">
+            <h2><span><a [routerLink]="['/travellodging']">PLEASE VISIT OUR TRAVEL AND LODGING PAGE TO LEARN MORE ABOUT COMING TO SPIRITCON FROM OUT OF STATE!</a></span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---new section added 2018-02-20---->
+
+<app-footer></app-footer>
+
+
+<div *ngIf="isModalShown3" class="modal fade mybuynowModal" id="mybuynowModal" role="dialog" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <h2>We would love for you to Exhibit or have a Table with us here at <span>SpiritCon!</span></h2>
+        <h3><span class="blue">Vendors</span> will be in a room separate from Readers and Healers to give better atmosphere to both.</h3>
+        <ul>
+          <li>Vendor booths are 10'x10' and $120. </li>
+          <li>They have the option to do split booths that are 5'x10' for only $60.</li>
+          <li>Reader booths are 6'x6' for $60 and Healer booths are 10'x10' for $80. </li>
+          <li>All booths come with tables, tablecloths, and chairs. </li>
+          <li>We also have info booths that are just a 4' table with tablecloth. These are free to any groups wishing to have one. </li>
+        </ul>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+          <!-- Saved buttons use the "secure click" command -->
+          <input type="hidden" name="cmd" value="_s-xclick">
+
+          <!-- Saved buttons are identified by their button IDs -->
+          <input type="hidden" name="hosted_button_id" value="221">
+
+          <!-- Saved buttons display an appropriate button image. -->
+          <input type="image" name="submit"
+                 src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                 alt="PayPal - The safer, easier way to pay online">
+          <img alt="" width="1" height="1"
+               src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="isModalShown" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <br/>
+        <h2>COMING Soon!</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShown4" class="modal fade mybuynowModal buybooth" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+      <!--  <h2>We have 10 of the <span>6'x6'</span> Reader spaces left, 6 of the <span>10'x10'</span> Vendor spaces, and 2 of the <span>5'x10'</span> Vendor spaces.</h2>-->
+        <h6>GET A BOOTH OR TABLE!</h6>
+        <p>To buy a booth space or reader table please contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:Vendors@spiritconvention.com" target="_top">Vendors@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+       <!-- <iframe style="border: none" src="http://influxiq.com/projects/paypalt.php"></iframe>-->
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isModalShown5" class="modal fade mybuynowModal contentshow" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <!-- <h1 *ngIf="contentdetails.booth_no">Booth Number:<span>{{contentdetails.booth_no}}</span></h1>
+        <h1 *ngIf="contentdetails.table_no">Table Number:<span>{{contentdetails.table_no}}</span></h1> -->
+        <h1>{{contentdetails.person_name}}</h1>
+        <!-- <h2>Business Name:<span>{{contentdetails.business_name}}</span></h2> -->
+        <p [innerHTML]="_sanitizer.bypassSecurityTrustHtml(contentdetails.description)"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isModalShown6" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+                <div class="modallogowrapper">
+                    <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+                </div>
+
+                <h6>SpiritCon Agenda 2019</h6>
+
+                <p>We will be launching our new Agenda for the 2019 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="isModalShown10" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+
+        <h6>SpiritCon Agenda 2020</h6>
+
+
+
+        <p>We will be launching our new Agenda for the 2020 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

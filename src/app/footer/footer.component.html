@@ -1,0 +1,266 @@
+<div class="container-fluid footerblock">
+  <div class="footerblockwrapper">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 footerblockleft">
+        <div class="logowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo.png"></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 footerblockright">
+        <div class="row footerblockrightwrapper">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 socialmedialinkblock">
+            <ul class="list-inline socialmedialinks">
+              <li>Follow us</li>
+              <li><a href="https://www.facebook.com/spiritconutah/" target="_blank"><img src="../../assets/images/ftmedia-iconfb.png"></a></li>
+             <!-- <li><a href="javascript:void(0)"><img src="../../assets/images/ftmedia-icontw.png"></a></li>
+              <li><a href="javascript:void(0)"><img src="../../assets/images/ftmedia-icongplus.png"></a></li>
+              <li><a href="javascript:void(0)"><img src="../../assets/images/ftmedia-iconskype.png"></a></li>
+              <li><a href="javascript:void(0)"><img src="../../assets/images/ftmedia-iconblog.png"></a></li>-->
+            </ul>
+          </div>
+         <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 newlettersearch">
+            <div class="search">
+              <input type="text" class="form-control input-sm" placeholder="Your email address"  [(ngModel)]="email_subs" />
+              <button type="submit" class="btn btn-primary btn-sm btnserch" (click)="callforsubs()">Subscribe</button>
+              <span class="has-error" *ngIf ="emailerror">{{emailerror}}</span>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footermenu">
+        <ul class="list-inline">
+          <li class="active"><a [routerLink]="['/']" target="_self">Home</a></li>
+
+          <!---new section added 2018-02-20---->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Venue Info
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a [routerLink]="['/conventioncenter']">Convention Center</a></li>
+              <li class="ssd lidiv2"><a [routerLink]="['/travellodging']" >Travel/Lodging</a></li>
+              <<!--li><a style="cursor: pointer" (click)="callmodalforagendamoalcom1()" >Travel/Lodging</a></li>-->
+            </ul>
+          </li>
+          <!---new section added 2018-02-20---->
+
+          <!--<li><a [routerLink]="['/conventioncenter']" target="_self">Convention Center</a></li>-->
+          <!--<li><a [routerLink]="['/agenda']">Agenda</a></li>-->
+          <li><a  style="cursor: pointer" (click)="callmodalforagendamoalnew()">Agenda</a></li>
+       <!--   <li><a style="cursor: pointer" (click)="callmodalforagendamoal()">Agenda</a></li>-->
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Participants
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a  style="cursor: pointer" (click)="callmodalforagenda()">Presenters</a></li>
+              <li ><a  style="cursor: pointer" (click)="callmodalforagenda()">Vendors</a></li>
+              <li ><a  style="cursor: pointer" (click)="callmodalforagenda()">Readers</a></li>
+             <!-- <li><a [routerLink]="['/sponsor']"  target="_self">Sponsor</a></li>-->
+              <li><a  style="cursor: pointer" (click)="callmodalforagendamoalcom1()">Sponsors</a></li>
+
+            </ul>
+          </li>
+
+
+        <!--  <li><a [routerLink]="['/presenters']" target="_self">Presenters</a></li>-->
+          <!--<li><a href="https://www.brownpapertickets.com/event/3161483" target="_blank">Buy Tickets</a></li>-->
+          <li><a href="https://www.eventbrite.com/e/spiritcon-2020-tickets-64701065629?fbclid=IwAR2Y2CfhMWxveRfn9E-DWSi13SHS_X-bm3auszxtJxumm3GU2jA4ThhQSqs" target="_blank">Buy Tickets</a></li>
+         <!-- <li><a [routerLink]="['/boothtable']" target="_self">Vendors/Readers</a></li>-->
+          <li><a [routerLink]="['/aboutspiritcon']" target="_self">About SpiritCon</a></li>
+          <!--Pending Development--->
+          <li><a  style="cursor: pointer" (click)="callmodalforbuybooth()">Buy Booth</a></li>
+
+         <!-- <li><a [routerLink]="['/past-events']" target="_self">Past Events</a></li>-->
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Past Events
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a [routerLink]="['/pastevents2019']"  target="_self">Past Event 2019</a></li>
+              <li ><a [routerLink]="['/past-events']"  target="_self">Past Event 2018</a></li>
+            </ul>
+          </li>
+
+
+          <li class="contactmenu"><a [routerLink]="['/contactus']" target="_self">Contact Us</a></li>
+          <li><a [routerLink]="['/login']" target="_self">Login</a></li>
+
+
+
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 copyrightmenu">
+        <p>© Copyright 2018 spirit con. All Rights Reserved. </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isModalShown2" class="modal fade mybuynowModal subscribenewsletter" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <img src="../../assets/images/logo-spiritconversation.png" alt="logo" class="img-responsive center-block" >
+      </div>
+      <div class="modal-body">
+        <h3 style="text-align: center">You are successfully added to our newsletter. We will get back to you soon.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShown" class="modal fade mybuynowModal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <br/>
+        <h2>COMING Soon!</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShown3" class="modal fade mybuynowModal" id="mybuynowModal" role="dialog" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <h2>We would love for you to Exhibit or have a Table with us here at <span>SpiritCon!</span></h2>
+        <h3><span class="blue">Vendors</span> will be in a room separate from Readers and Healers to give better atmosphere to both.</h3>
+        <ul>
+          <li>Vendor booths are <span>10'x10'</span> and $120. </li>
+          <li>They have the option to do split booths that are <span>5'x10'</span> for only $60.</li>
+          <li>Reader booths are <span>6'x6'</span> for $60 and Healer booths are <span>10'x10'</span> for $80. </li>
+          <li>All booths come with tables, tablecloths, and chairs. </li>
+          <li>We also have info booths that are just a 4' table with tablecloth. These are free to any groups wishing to have one. </li>
+        </ul>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+          <!-- Saved buttons use the "secure click" command -->
+          <input type="hidden" name="cmd" value="_s-xclick">
+
+          <!-- Saved buttons are identified by their button IDs -->
+          <input type="hidden" name="hosted_button_id" value="221">
+
+          <!-- Saved buttons display an appropriate button image. -->
+          <input type="image" name="submit"
+                 src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+                 alt="PayPal - The safer, easier way to pay online">
+          <img alt="" width="1" height="1"
+               src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="isModalShown4" class="modal fade mybuynowModal buybooth" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <!--  <h2>We have 10 of the <span>6'x6'</span> Reader spaces left, 6 of the <span>10'x10'</span> Vendor spaces, and 2 of the <span>5'x10'</span> Vendor spaces.</h2>-->
+        <h6>GET A BOOTH OR TABLE!</h6>
+        <p>To buy a booth space or reader table please contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:Vendors@spiritconvention.com" target="_top">Vendors@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+        <!-- <iframe style="border: none" src="http://influxiq.com/projects/paypalt.php"></iframe>-->
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isModalShown5" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+
+        <h6>SpiritCon Agenda 2019</h6>
+
+        <p>We will be launching our new Agenda for the 2019 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalShown10" class="modal fade mybuynowModal agendamoal" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+
+        <h6>SpiritCon Agenda 2020</h6>
+
+
+
+        <p>We will be launching our new Agenda for the 2020 SpiritCon July 1st! Please check back and in the meantime if you would like to get an idea contact us at <a href="tel:(801) 773-7243">(801) 773-7243</a> email us at <a href="mailto:info@spiritconvention.com" target="_top">info@spiritconvention.com</a> or come into the Hidden Sage at 1661 N. Main Street Sunset, UT. 84015</p>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="isModalShowncom1" class="modal fade mybuynowModal commingsoon" (onHidden)="onHidden()" bsModal #staticModal="bs-modal" [config]="{ show: true}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" (click)="staticModal.hide()">&times;</button>
+        <div class="modallogowrapper">
+          <a [routerLink]="['/']"><img src="../../assets/images/logo-spiritconversation.png"></a>
+        </div>
+        <br/>
+        <h2>COMING Soon!</h2>
+      </div>
+    </div>
+  </div>
+</div>
+

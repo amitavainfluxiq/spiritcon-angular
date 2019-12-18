@@ -1,0 +1,91 @@
+<div *ngIf="usertype==1">
+<app-adminheader></app-adminheader>
+<app-adminleftsidebar></app-adminleftsidebar></div>
+<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 dashboard_right">
+  <div class="dashboard_right_wrapper">
+    <div class="dashboard1_div1 ">
+      <section class="content-header">
+        <h1>
+          Dashboard
+          <small></small>
+        </h1>
+        <!--<ol class="breadcrumb">
+            <li><a href="javascript:void(0)"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>-->
+      </section>
+      <section class="content">
+        <div class="row">
+          <a [routerLink]="['/dashboard']"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"> <img src="../../assets/images/aicon1.png" alt="#" style="display:block; margin:23px auto; width:48px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">HOME</span>
+              </div>
+            </div>
+          </div>
+          </a>
+
+          <a [routerLink]="['/adminlist']"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><img src="../../assets/images/aicon2.png" alt="#" style="display:block; margin:21px auto; width:48px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">Admin Manager</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div></a>
+
+
+          <a [routerLink]="['/speakerlist']"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><img src="../../assets/images/aicon3.png" alt="#" style="display:block; margin:29px auto; width:50px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">Speaker Manager</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div></a>
+
+
+
+          <a [routerLink]="['/vendorlist']"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><img src="../../assets/images/iconprodmgr.png" alt="#" style="display:block; margin:21px auto; width:48px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">Vendor Manager</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div></a>
+
+
+
+          <a [routerLink]="['/healerlist']"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><img src="../../assets/images/iconordmgr.png" alt="#" style="display:block; margin:21px auto; width:48px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">Healer Manager</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div></a>
+
+  <a (click)="logout()" class="givepointer"><div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><img src="../../assets/images/aicon9.png" alt="#" style="display:block; margin:21px auto; width:48px;"></span>
+              <div class="info-box-content">
+
+                <span class="info-box-number">Log Out</span>
+              </div><!-- /.info-box-content -->
+            </div><!-- /.info-box -->
+          </div>
+  </a>
+
+
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
